@@ -37,8 +37,9 @@
     <img class="left-image" src="images/2233.png" alt="Imagen izquierda">
 
     <label for="sortBy">Seleccionar por rol</label>
-    <select data-testid="select-filter" name="tipo" id="sortBy">
-      <option value="vacio"></option>
+
+    <select data-testid="select-filter" name="extraInfo.tipoGuardian" id="sortBy">
+      <option value="vacio">Selecciona una opción...</option>
       <option value="guardian-sistema-solar-interno"> Guardian Sistema Solar Interno </option>
       <option value="guardian-sistema-solar-externo"> Guardian Sistema Solar Externo </option>
       <option value="guardian-fuera-sistema-solar"> Guardian Fuera Sistema Solar </option>
@@ -49,7 +50,7 @@
 
     <label for="sortOrder">Orden por nombre</label>
     <select data-testid="select-sort" name="nombre" id="sortOrder">
-      <option value="vacio"> </option>
+      <option value="vacio">Seleccion una opción... </option>
       <option value="asc"> Orden A-Z </option>
       <option value="des"> Orden Z -A </option>
     </select>
