@@ -1,19 +1,30 @@
-export function filterData(data, filterBy, value) {
-  // Verificar que la función está recibiendo los valores
-  console.log('Data:', data);
-  console.log('Filter By:', filterBy);
-  console.log('Value:', value);
+export const filterData = (data, filterBy, value) => {
+  return data.filter(item =>
+    item.extraInfo[filterBy].toLowerCase() === value.toLowerCase());
+}
 
-  // Filtrar los datos según el campo y el valor proporcionados
-  return data.filter(item => {
-    // Navegar a través del objeto para llegar al campo especificado
-    const keys = filterBy.split('.');
-    let fieldValue = item;
-    for (const key of keys) {
-      fieldValue = fieldValue[key];
-      if (!fieldValue) break;
-    }
-    console.log('Field Value:', fieldValue); // <-- Añade esta línea para imprimir el valor del campo
-    return fieldValue === value;
-  });
+export const sortData = (data, sortBy, sortOrder) => {
+  const dataCopia = data;
+  if (sortOrder === "asc") {
+    dataCopia.sort((a, b) => {
+      if (a[sortBy] < b[sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return 1;
+      }
+      return 0;
+    });
+  } else if (sortOrder === "desc") {
+    dataCopia.sort((a, b) => {
+      if (a[sortBy] > b[sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] < b[sortBy]) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+  return dataCopia;
 }
