@@ -9,6 +9,10 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    margin: 1em;
+}
+
 .encabezado {
     margin-top: 4em;
 }
@@ -54,27 +58,34 @@ header {
 
 .menu {
     background-color: #DC5CD3;
-    padding: 1%;
+    border-radius: 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
     height: 2.6em;
+    overflow: visible; /* Permite que el contenido se salga del contenedor */
+    margin: 0 auto;
+    position: relative; /* Posición relativa para controlar overflow */
 }
 
 .menu img {
     width: 10%;
+    
+}
+.left-image {
+    
 }
 
 .right-image {
-    order: 1;
+    order: 1;    
 }
 
 label {
     font-family: "Roboto", sans-serif;
-    font-size: x-small;
+    font-size: 70%;
     color: #fdd5fa;
-    width: 100%;
+    width: 80%;
     margin: 0.5em 0;
 }
 
@@ -82,9 +93,9 @@ select {
     background-color: #fdd5fa;
     border-radius: 2em;
     font-family: "Roboto", sans-serif;
-    font-size: medium;
+    font-size: 60%;
     color: #25022d;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
 }
 
@@ -105,12 +116,19 @@ button[data-testid="button-clear"] {
     background-color: #D2D3FC;
     border: 4px solid #FFFFB6;
     border-radius: 3em;
-    width: 80%;
+    width: 100%;
     list-style: none;
     margin-top: 20px;
     padding: 1em;
     box-sizing: border-box;
-    margin: 1em;
+    margin: 20px auto;
+    /* Centrar horizontalmente */
+    display: flex;
+    align-items: center;
+    /* Centrar horizontalmente los elementos */
+    justify-content: center;
+    /* Centrar verticalmente los elementos */
+    box-shadow: 0 4px 8px rgba(227, 61, 216, 0.1);
 }
 
 .card-container {
@@ -124,27 +142,41 @@ button[data-testid="button-clear"] {
 }
 
 .card-container h2 {
+    background-color: #45A7F0;
+    padding: 1em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2[itemprop="name"] {
     font-family: "Roboto", sans-serif;
     font-size: smaller;
-    background-color: #45A7F0;
     color: #001184;
     margin-top: 1em;
     margin-bottom: 1em;
     text-align: center;
-    padding: 1em;
-    border-radius: 2em;
-    width: 90%;
+    padding: 0.8em;
+
 }
 
+
 .div-item {
-    width: 100%;
+
     display: flex;
     justify-content: center;
 }
 
 img[itemprop="image"] {
-    width: 50%;
-    height: 11em;
+    height: 12em;
+    width: 9em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    /* Ajuste del objeto */
+    display: block;
+    /* Hacer que la imagen sea un bloque */
+    margin: 0 auto;
+    /* Margen automático para centrar horizontalmente */
 }
 
 .item-facts {
@@ -160,9 +192,52 @@ img[itemprop="image"] {
     color: #470742;
     text-align: center;
     padding: 0.8em;
-    border-radius: 2em;
-    width: 80%;
-    margin: 2%
+    width: 70%;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estadisticas {
+    font-family: "Roboto", sans-serif;
+    font-size: 60%;
+    /* Tamaño del texto */
+    color: #6e0567;
+    /* Color del texto */
+    text-align: center;
+    /* Alineación centrada */
+}
+
+.container2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cuadrado {
+    width: 20%;
+    /* Ancho del cuadrado */
+    padding-top: 10%;
+    /* Altura del cuadrado (relativa al ancho para que sea cuadrado) */
+    background-color: #D2D3FC;
+    /* Color de fondo del cuadrado */
+    border: 4px solid #f5f5f3;
+    border-radius: 1em;
+    position: relative;
+    overflow: hidden;
+    /* Para que el contenido no se desborde */
+    margin-bottom: 20px;
+    /* Espacio entre los cuadrados */
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: blueviolet;
+    font-size: 80%;
+    font-family: "Roboto", sans-serif;
 }
 
 footer {
@@ -200,6 +275,10 @@ footer {
         padding-left: 17em;
     }
 
+    .menu {
+        font-size: 2em;
+    }
+
     .menu img {
         width: 6%;
     }
@@ -225,18 +304,32 @@ footer {
         padding: 3em;
     }
 
-    .card-container h2 {
-        font-size: larger;
+
+    .div-item img {
+
+        max-height: 20em;
+        
     }
 
-    img[itemprop="image"] {
-        height: 15em;
+    .card-container h2 {
+        font-size: larger;
     }
 
     .facts {
         font-size: medium;
     }
 
+    .estadisticas {
+        font-size: 2em;
+    }
+
+    .cuadrado {
+        width: 20%;
+    }
+
+    .content {
+        font-size: 2em;
+    }
 
 
 }
